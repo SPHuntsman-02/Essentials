@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Bookshelf_Scene_Huntsman.ma
-//Last modified: Fri, Sep 05, 2025 11:50:24 PM
+//Last modified: Fri, Sep 05, 2025 11:59:54 PM
 //Codeset: 1252
 requires maya "2026";
 requires "mtoa" "5.5.3";
@@ -10,23 +10,22 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 10 Enterprise v2009 (Build: 19045)";
-fileInfo "UUID" "5FDE4FA1-4AF9-26FC-6FAD-C19D8E056362";
+fileInfo "UUID" "190E8904-46C0-6F97-DA60-BFA8E8C55410";
 createNode transform -s -n "persp";
 	rename -uid "10115240-4DA1-9145-EE2E-879CA047E0B3";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 10.791520052881266 9.1042731619793713 10.48805359657374 ;
-	setAttr ".r" -type "double3" -10.200000000000422 5.5999999999998611 0 ;
-	setAttr ".rp" -type "double3" 1.7763568394002505e-15 8.8817841970012523e-16 0 ;
-	setAttr ".rpt" -type "double3" -1.6263807333697435e-15 6.6171772584262942e-17 5.7812918579897197e-16 ;
+	setAttr ".t" -type "double3" -40.465833705125625 26.134136515046631 45.327765417998364 ;
+	setAttr ".r" -type "double3" -18.000000000000004 -41.6 0 ;
+	setAttr ".rpt" -type "double3" -1.6100367092223593e-15 6.5181738063090185e-17 9.2340016704898963e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "BB795557-4F0C-C46C-4D8D-248C885ED01F";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 18.653766306782295;
+	setAttr ".coi" 64.085879880048438;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 9 5.8009757995605469 -7.7832813262939453 ;
+	setAttr ".tp" -type "double3" -1.4224945826525701e-14 6.3305105326400932 -0.25000000000007105 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "7FBF38BD-4319-3EC2-D744-72B36D0464E4";
