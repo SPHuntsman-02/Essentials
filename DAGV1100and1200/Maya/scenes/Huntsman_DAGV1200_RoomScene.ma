@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Huntsman_DAGV1200_RoomScene.ma
-//Last modified: Mon, Oct 27, 2025 03:11:31 PM
+//Last modified: Mon, Oct 27, 2025 04:06:13 PM
 //Codeset: 1252
 file -rdi 1 -ns "Huntsman_Sofa" -rfn "Huntsman_SofaRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Huntsman_Sofa.ma";
@@ -28,12 +28,12 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "4C97FE38-4CD2-72DA-93CF-0F9A946E6D6F";
+fileInfo "UUID" "2A8264B2-4A7D-80A7-04FF-ADB65259E129";
 createNode transform -s -n "persp";
 	rename -uid "10115240-4DA1-9145-EE2E-879CA047E0B3";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -4.670262783344711 65.556062216420969 22.109726584710018 ;
-	setAttr ".r" -type "double3" -69.600000000001785 -14.799999999999448 -1.6448478175804235e-15 ;
+	setAttr ".t" -type "double3" -18.45817191250827 38.252330688711368 52.690981798926032 ;
+	setAttr ".r" -type "double3" -31.800000000001965 -20.399999999999451 8.483451931013072e-16 ;
 	setAttr ".rp" -type "double3" -4.8849813083506888e-15 -3.5527136788005009e-15 0 ;
 	setAttr ".rpt" -type "double3" 1.1821447060979062e-14 -2.8439543105517483e-15 -1.4173366577891492e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
