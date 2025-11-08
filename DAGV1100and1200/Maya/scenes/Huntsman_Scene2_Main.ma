@@ -1,11 +1,19 @@
 //Maya ASCII 2026 scene
 //Name: Huntsman_Scene2_Main.ma
-//Last modified: Fri, Oct 31, 2025 02:54:40 PM
+//Last modified: Sat, Nov 08, 2025 12:14:35 AM
 //Codeset: 1252
-file -rdi 1 -ns "Huntsman_Asset1" -rfn "Huntsman_Asset1RN" -op "v=0;" -typ "mayaAscii"
-		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset1.ma";
+file -rdi 1 -ns "Huntsman_Asset1" -dr 1 -rfn "Huntsman_Asset1RN" -op "v=0;" 
+		-typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset1.ma";
+file -rdi 1 -ns "Huntsman_Asset2" -rfn "Huntsman_Asset1RN1" -op "v=0;" -typ
+		 "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset1.ma";
+file -rdi 1 -ns "Huntsman_Asset3" -rfn "Huntsman_Asset2RN" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset2.ma";
 file -r -ns "Huntsman_Asset1" -dr 1 -rfn "Huntsman_Asset1RN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset1.ma";
+file -r -ns "Huntsman_Asset2" -dr 1 -rfn "Huntsman_Asset1RN1" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset1.ma";
+file -r -ns "Huntsman_Asset3" -dr 1 -rfn "Huntsman_Asset2RN" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset2.ma";
 requires maya "2026";
 requires -nodeType "MaterialXSurfaceShader" -dataType "MxDocumentStackData" "LookdevXMaya" "1.9.0";
 requires "stereoCamera" "10.0";
@@ -17,17 +25,17 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "4E603BBD-4504-E6B6-84F1-AEA262F7F88D";
+fileInfo "UUID" "951E6B37-45B1-D79C-20D2-2EB227D1285E";
 createNode transform -s -n "persp";
 	rename -uid "B3B046BF-4E20-513D-0F2D-B787DEC71139";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 27.680208625969055 59.151260172847721 73.642001602322367 ;
-	setAttr ".r" -type "double3" -36.9383527296037 20.6 0 ;
+	setAttr ".t" -type "double3" 1.9523511989511579 41.051955358541171 37.25308008964457 ;
+	setAttr ".r" -type "double3" -47.738352729607271 2.9999999999999738 -9.9528734467243471e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "253EB750-4CB0-FC86-AC0E-AFA047B3A0F8";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 98.4287048050995;
+	setAttr ".coi" 55.469511356501627;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -83,11 +91,12 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -n "CheckpointTower";
-	rename -uid "723E2C37-4F94-5808-E50A-0AA6FB990EFC";
-	setAttr ".rp" -type "double3" 12 7.5 0 ;
-	setAttr ".sp" -type "double3" 12 7.5 0 ;
+	rename -uid "049EBFDA-4613-2192-0714-0DBF7960AD90";
+	setAttr ".t" -type "double3" 13 0 0 ;
+	setAttr ".rp" -type "double3" 0 7.5 0 ;
+	setAttr ".sp" -type "double3" 0 7.5 0 ;
 createNode mesh -n "CheckpointTowerShape" -p "CheckpointTower";
-	rename -uid "A61B45C5-4A51-EA1E-2512-2D8DE074C725";
+	rename -uid "8A0F23B2-4FD9-BD9E-C4B7-68A1F9E9CC5D";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
@@ -221,21 +230,6 @@ createNode mesh -n "CheckpointTowerShape" -p "CheckpointTower";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 160 ".pt[0:159]" -type "float3"  12 0 0 12 0 0 12 0 0 12 0 
-		0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 
-		0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 
-		12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 
-		0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 
-		0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 
-		12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 
-		0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 
-		0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 
-		12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 
-		0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 
-		0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 
-		12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 
-		0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 0 0 12 
-		0 0 12 0 0 12 0 0 12 0 0 12 0 0;
 	setAttr -s 160 ".vt[0:159]"  -3 0 3 3 0 3 -3 12 3 3 12 3 -3 12 -3 3 12 -3
 		 -3 0 -3 3 0 -3 -3 12 3 3 12 3 -3 15 3 3 15 3 -3 15 -3 3 15 -3 -3 12 -3 3 12 -3 -1.77694809 12 3
 		 -1.77694809 15 3 -1.80000007 15 -3 -1.80000007 12 -3 1.80576289 12 3 1.80576289 15 3
@@ -428,20 +422,20 @@ createNode mesh -n "CheckpointTowerShape" -p "CheckpointTower";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "211476C1-4F04-17BB-D5DD-0DBF07DC1690";
-	setAttr -s 5 ".lnk";
-	setAttr -s 5 ".slnk";
+	rename -uid "9C9185F8-44DB-4C14-CA98-2F876CFE5F95";
+	setAttr -s 15 ".lnk";
+	setAttr -s 15 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "0F2F1687-4211-E319-B7B5-219E65F809B0";
+	rename -uid "6C35FEB9-46C6-8C73-055A-60AE30009755";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "90BEBC2B-40B6-A97D-077A-2EBBAA162DB4";
+	rename -uid "0E9FC50F-408F-9B64-D37D-99988068A5F6";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "26F6FBB1-4B24-68C4-01E7-429069D27EAF";
+	rename -uid "52A83343-4AA8-134D-1B54-48B2ADBC9CE0";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "4CF8F162-4C24-088D-9F1D-96ABB987E1D1";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "82385B8B-4DCB-33D5-46B2-5CA1644D7053";
+	rename -uid "07EC58D1-4320-34B9-0FF6-628029421DFF";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "8D1F3583-4BED-97BD-7945-77BC10C1908D";
 	setAttr ".g" yes;
@@ -459,9 +453,9 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n"
 		+ "            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n"
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 655\n            -height 329\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n"
-		+ "        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
+		+ "        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1317\n            -height 706\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1117\n            -height 706\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n"
@@ -488,8 +482,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
 		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n"
 		+ "                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1317\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1317\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1117\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1117\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -498,13 +492,13 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode reference -n "Huntsman_Asset1RN";
 	rename -uid "734EB958-4E7B-D33E-F09B-EEA52AAD19BB";
+	setAttr ".fn[0]" -type "string" "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset1.ma";
 	setAttr -s 2 ".phl";
-	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" -type "TdataCompound" ;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Huntsman_Asset1RN"
-		"Huntsman_Asset1RN" 0
-		"Huntsman_Asset1RN" 167
+		"Huntsman_Asset1RN" 7
 		2 "|Huntsman_Asset1:CheckpointTower" "translate" " -type \"double3\" 0 0 0"
 		
 		2 "|Huntsman_Asset1:CheckpointTower" "rotatePivot" " -type \"double3\" -12 7.5 0"
@@ -512,333 +506,15 @@ createNode reference -n "Huntsman_Asset1RN";
 		2 "|Huntsman_Asset1:CheckpointTower" "scalePivot" " -type \"double3\" -12 7.5 0"
 		
 		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts" " -s 160"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[0]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[1]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[2]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[3]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[4]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[5]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[6]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[7]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[8]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[9]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[10]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[11]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[12]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[13]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[14]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[15]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[16]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[17]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[18]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[19]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[20]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[21]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[22]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[23]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[24]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[25]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[26]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[27]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[28]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[29]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[30]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[31]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[32]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[33]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[34]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[35]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[36]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[37]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[38]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[39]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[40]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[41]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[42]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[43]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[44]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[45]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[46]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[47]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[48]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[49]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[50]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[51]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[52]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[53]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[54]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[55]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[56]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[57]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[58]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[59]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[60]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[61]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[62]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[63]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[64]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[65]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[66]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[67]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[68]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[69]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[70]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[71]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[72]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[73]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[74]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[75]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[76]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[77]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[78]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[79]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[80]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[81]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[82]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[83]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[84]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[85]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[86]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[87]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[88]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[89]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[90]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[91]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[92]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[93]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[94]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[95]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[96]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[97]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[98]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[99]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[100]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[101]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[102]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[103]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[104]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[105]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[106]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[107]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[108]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[109]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[110]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[111]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[112]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[113]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[114]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[115]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[116]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[117]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[118]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[119]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[120]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[121]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[122]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[123]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[124]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[125]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[126]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[127]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[128]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[129]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[130]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[131]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[132]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[133]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[134]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[135]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[136]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[137]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[138]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[139]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[140]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[141]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[142]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[143]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[144]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[145]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[146]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[147]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[148]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[149]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[150]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[151]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[152]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[153]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[154]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[155]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[156]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[157]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[158]" " -type \"float3\" -12 0 0"
-		2 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape" 
-		"pnts[159]" " -type \"float3\" -12 0 0"
+		"pt[0:159]" (" -s 160 -type \"float3\" -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -"
+		+ "12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0 -12 0 0"
+		)
 		3 "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape.instObjGroups" 
 		"Huntsman_Asset1:Maya_Lambert1SG.dagSetMembers" "-na"
-		5 3 "Huntsman_Asset1RN" "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape.instObjGroups" 
-		"Huntsman_Asset1RN.placeHolderList[1]" "Huntsman_Asset1:Maya_Lambert1SG.dsm"
 		5 3 "Huntsman_Asset1RN" "|Huntsman_Asset1:materialXStack1|Huntsman_Asset1:materialXStackShape1.stack" 
-		"Huntsman_Asset1RN.placeHolderList[2]" "";
+		"Huntsman_Asset1RN.placeHolderList[2]" ""
+		5 3 "Huntsman_Asset1RN" "|Huntsman_Asset1:CheckpointTower|Huntsman_Asset1:CheckpointTowerShape.instObjGroups" 
+		"Huntsman_Asset1RN.placeHolderList[3]" "Huntsman_Asset1:Maya_Lambert1SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
@@ -862,10 +538,128 @@ createNode MaterialXSurfaceShader -n "Maya_Lambert1";
 createNode shadingEngine -n "Maya_Lambert1SG";
 	rename -uid "2BF81D61-430B-8D7C-CF79-9F9DA2F9FA8A";
 	setAttr ".ihi" 0;
-	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo1";
 	rename -uid "C1EE00F5-4911-4E58-DD65-C9AC0174ABE5";
+createNode reference -n "sharedReferenceNode";
+	rename -uid "8A3C1796-461D-82AE-700F-AB8BDBC3E6E7";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sharedReferenceNode";
+createNode reference -n "Huntsman_Asset1RN1";
+	rename -uid "5F358684-48F2-4391-7D17-1E8F377F4533";
+	setAttr ".phl[1]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Huntsman_Asset1RN1"
+		"Huntsman_Asset1RN1" 0
+		"Huntsman_Asset1RN1" 3
+		2 "|Huntsman_Asset2:CheckpointTower" "translate" " -type \"double3\" -13 0 0"
+		
+		3 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape.instObjGroups" 
+		"Huntsman_Asset2:Maya_Lambert1SG.dagSetMembers" "-na"
+		5 3 "Huntsman_Asset1RN1" "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape.instObjGroups" 
+		"Huntsman_Asset1RN1.placeHolderList[1]" "Huntsman_Asset2:Maya_Lambert1SG.dsm";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "Huntsman_Asset2RN";
+	rename -uid "D736DE84-4DC4-11DC-D543-7FA72340DFD7";
+	setAttr -s 3 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Huntsman_Asset2RN"
+		"Huntsman_Asset2RN" 0
+		"Huntsman_Asset2RN" 9
+		2 "|Huntsman_Asset3:CheckpointWall" "rotate" " -type \"double3\" 0 0 0"
+		2 "|Huntsman_Asset3:CheckpointWall" "rotatePivot" " -type \"double3\" 0 5 0"
+		
+		2 "|Huntsman_Asset3:CheckpointWall" "scalePivot" " -type \"double3\" 0 5 0"
+		
+		2 "|Huntsman_Asset3:CheckpointWall|Huntsman_Asset3:CheckpointWallShape" "uvSet[0].uvSetName" 
+		" -type \"string\" \"map1\""
+		3 "Huntsman_Asset3:polyTweakUV1.output" "|Huntsman_Asset3:CheckpointWall|Huntsman_Asset3:CheckpointWallShape.inMesh" 
+		""
+		3 "|Huntsman_Asset3:CheckpointWall|Huntsman_Asset3:CheckpointWallShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 4 "Huntsman_Asset2RN" "|Huntsman_Asset3:CheckpointWall|Huntsman_Asset3:CheckpointWallShape.inMesh" 
+		"Huntsman_Asset2RN.placeHolderList[1]" ""
+		5 3 "Huntsman_Asset2RN" "|Huntsman_Asset3:CheckpointWall|Huntsman_Asset3:CheckpointWallShape.instObjGroups" 
+		"Huntsman_Asset2RN.placeHolderList[2]" ":initialShadingGroup.dsm"
+		5 3 "Huntsman_Asset2RN" "Huntsman_Asset3:polyTweakUV1.output" "Huntsman_Asset2RN.placeHolderList[3]" 
+		"Huntsman_Asset3:CheckpointWallShape.i";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode transformGeometry -n "transformGeometry1";
+	rename -uid "9B7EBAAA-4BD8-9A0D-2F67-27AD0FE03DA8";
+	setAttr ".txf" -type "matrix" 0 0 -1 0 0 1 0 0 1 0 0 0 0 0 0 1;
+createNode shadingEngine -n "Maya_Lambert2SG";
+	rename -uid "09C3A4D1-45DC-EEBB-73DE-FE897A176A70";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo2";
+	rename -uid "EABDABC9-4AC9-36FF-49ED-E4A445850873";
+createNode blinn -n "blinn1";
+	rename -uid "DC5AAE81-43C2-0DD6-84BD-A0AAFBEDD580";
+	setAttr ".c" -type "float3" 0.5 0.5 0.141 ;
+createNode shadingEngine -n "blinn1SG";
+	rename -uid "E7D06862-444E-CC41-2C78-EE82411DED6C";
+	setAttr ".ihi" 0;
+	setAttr -s 3 ".dsm";
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo3";
+	rename -uid "51F7AD0D-490C-81E1-F297-F79F3922AFC8";
+createNode shadingEngine -n "blinn2SG";
+	rename -uid "9372FD48-4E4C-17DE-7831-AF8A3E7E4119";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo4";
+	rename -uid "A6758E08-443E-101E-B692-BC97B2168B82";
+createNode blinn -n "blinn3";
+	rename -uid "E25609E9-4CA3-DD1E-115F-128575F11D7C";
+createNode shadingEngine -n "Maya_Lambert3SG";
+	rename -uid "ABE4953A-4992-1579-F5B3-0FAEAE153DD4";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo5";
+	rename -uid "0DA9F488-4F5F-D66A-74B4-FA83AE70F345";
+createNode shadingEngine -n "Maya_Phong1SG";
+	rename -uid "DA7A896F-4D39-ACA8-21F0-849937F7B544";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo6";
+	rename -uid "AB684F3A-4451-40B9-403F-D586BC71EFF6";
+createNode blinn -n "blinn4";
+	rename -uid "6B0224E1-4AED-40F5-2593-21BDFCBE41FB";
+createNode shadingEngine -n "blinn4SG";
+	rename -uid "7CE6866C-4AAE-EB7F-50CE-A7B89959CDF7";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo7";
+	rename -uid "C6EF53F7-489B-AEA7-6350-6D86BD38E73A";
+createNode brush -n "art3dPaintLastPaintBrush";
+	rename -uid "98C079EC-44F5-33A3-AC56-DF889FB292FE";
+	setAttr ".lcl[0]"  0 0.5 1;
+	setAttr ".pcl[0]"  0 0.5 1;
+	setAttr ".wsc[0]"  0 1 1;
+	setAttr ".lws[0]"  0 1 1;
+	setAttr ".pws[0]"  0 1 1;
+	setAttr ".tls[0]"  0 1 1;
+	setAttr -s 3 ".env";
+	setAttr ".env[0].envp" 0.20000000298023224;
+	setAttr ".env[0].envc" -type "float3" 0 0 0.15000001 ;
+	setAttr ".env[0].envi" 2;
+	setAttr ".env[1].envp" 0.5;
+	setAttr ".env[1].envc" -type "float3" 0.47999999 0.55000001 0.69999999 ;
+	setAttr ".env[1].envi" 2;
+	setAttr ".env[2].envp" 1;
+	setAttr ".env[2].envc" -type "float3" 0 0.1 0.44999999 ;
+	setAttr ".env[2].envi" 2;
+	setAttr ".rro[0]"  0 1 1;
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "A1B7DC92-49F5-5E9B-B943-8B8A66E177DC";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -44.047617297323995 -615.47616601936511 ;
+	setAttr ".tgi[0].vh" -type "double2" 603.57140458765582 44.047617297323995 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -877,14 +671,14 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 5 ".st";
+	setAttr -s 11 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 8 ".s";
+	setAttr -s 10 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
-	setAttr -s 2 ".r";
+	setAttr -s 3 ".r";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -914,22 +708,63 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-connectAttr "Huntsman_Asset1RN.phl[1]" "Maya_Lambert1SG.dsm" -na;
-connectAttr "Huntsman_Asset1RN.phl[2]" "Maya_Lambert1.sk";
+connectAttr "Huntsman_Asset1RN1.phl[1]" "blinn1SG.dsm" -na;
+connectAttr "transformGeometry1.og" "Huntsman_Asset2RN.phl[1]";
+connectAttr "Huntsman_Asset2RN.phl[2]" "blinn1SG.dsm" -na;
+connectAttr "Huntsman_Asset2RN.phl[3]" "transformGeometry1.ig";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Maya_Lambert1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "blinn2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Phong1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "blinn4SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Maya_Lambert1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "blinn2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Phong1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "blinn4SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
+connectAttr "sharedReferenceNode.sr" "Huntsman_Asset1RN.sr";
+connectAttr "Huntsman_Asset1RN.phl[2]" "Maya_Lambert1.sk";
+connectAttr "Huntsman_Asset1RN.phl[3]" "Maya_Lambert1SG.dsm" -na;
 connectAttr "Maya_Lambert1.oc" "Maya_Lambert1SG.ss";
-connectAttr "CheckpointTowerShape.iog" "Maya_Lambert1SG.dsm" -na;
 connectAttr "Maya_Lambert1SG.msg" "materialInfo1.sg";
 connectAttr "Maya_Lambert1.msg" "materialInfo1.m";
 connectAttr "Maya_Lambert1.msg" "materialInfo1.t" -na;
+connectAttr "sharedReferenceNode.sr" "Huntsman_Asset1RN1.sr";
+connectAttr "blinn1.oc" "Maya_Lambert2SG.ss";
+connectAttr "Maya_Lambert2SG.msg" "materialInfo2.sg";
+connectAttr "blinn1.msg" "materialInfo2.m";
+connectAttr "blinn1.oc" "blinn1SG.ss";
+connectAttr "CheckpointTowerShape.iog" "blinn1SG.dsm" -na;
+connectAttr "blinn1SG.msg" "materialInfo3.sg";
+connectAttr "blinn1.msg" "materialInfo3.m";
+connectAttr "blinn3.oc" "blinn2SG.ss";
+connectAttr "blinn2SG.msg" "materialInfo4.sg";
+connectAttr "blinn3.msg" "materialInfo4.m";
+connectAttr "Maya_Lambert3SG.msg" "materialInfo5.sg";
+connectAttr "Maya_Phong1SG.msg" "materialInfo6.sg";
+connectAttr "blinn4.oc" "blinn4SG.ss";
+connectAttr "blinn4SG.msg" "materialInfo7.sg";
+connectAttr "blinn4.msg" "materialInfo7.m";
 connectAttr "Maya_Lambert1SG.pa" ":renderPartition.st" -na;
+connectAttr "Maya_Lambert2SG.pa" ":renderPartition.st" -na;
+connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
+connectAttr "blinn2SG.pa" ":renderPartition.st" -na;
+connectAttr "Maya_Lambert3SG.pa" ":renderPartition.st" -na;
+connectAttr "Maya_Phong1SG.pa" ":renderPartition.st" -na;
+connectAttr "blinn4SG.pa" ":renderPartition.st" -na;
 connectAttr "Maya_Lambert1.msg" ":defaultShaderList1.s" -na;
+connectAttr "blinn1.msg" ":defaultShaderList1.s" -na;
+connectAttr "blinn3.msg" ":defaultShaderList1.s" -na;
+connectAttr "blinn4.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 // End of Huntsman_Scene2_Main.ma
