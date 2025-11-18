@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Huntsman_Scene2_Main.ma
-//Last modified: Fri, Nov 14, 2025 11:53:02 PM
+//Last modified: Fri, Nov 14, 2025 11:58:56 PM
 //Codeset: 1252
 file -rdi 1 -ns "Huntsman_Asset1" -dr 1 -rfn "Huntsman_Asset1RN" -op "v=0;" 
 		-typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset1.ma";
@@ -29,12 +29,12 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "71BEBDB6-4138-221F-2D9F-3DB19B30A9BA";
+fileInfo "UUID" "BCBF7F8C-4F0C-AE85-56E0-E1A68E211C51";
 createNode transform -s -n "persp";
 	rename -uid "B3B046BF-4E20-513D-0F2D-B787DEC71139";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 12.867775567492265 6.6603980224264818 45.348754788728741 ;
-	setAttr ".r" -type "double3" -2.738352729607243 15.800000000000102 0 ;
+	setAttr ".t" -type "double3" 8.4615151882529425 15.475871078901871 45.088706549020792 ;
+	setAttr ".r" -type "double3" -13.538352729607327 10.600000000000152 -6.0670725016694245e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "253EB750-4CB0-FC86-AC0E-AFA047B3A0F8";
 	setAttr -k off ".v" no;
