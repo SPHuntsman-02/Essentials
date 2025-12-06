@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Huntsman_Scene2_Main.ma
-//Last modified: Fri, Dec 05, 2025 03:45:38 PM
+//Last modified: Fri, Dec 05, 2025 04:44:27 PM
 //Codeset: 1252
 file -rdi 1 -ns "Huntsman_Asset1" -dr 1 -rfn "Huntsman_Asset1RN" -op "v=0;" 
 		-typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset1.ma";
@@ -37,12 +37,12 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "20394B0C-4E82-D103-346F-67BA52DDC135";
+fileInfo "UUID" "A1670EAE-42FE-FA21-0191-A882A7670D25";
 createNode transform -s -n "persp";
 	rename -uid "B3B046BF-4E20-513D-0F2D-B787DEC71139";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 20.220558061358552 36.759268177917292 58.599764674487062 ;
-	setAttr ".r" -type "double3" -27.338352729614282 18.999999999997254 0 ;
+	setAttr ".t" -type "double3" 28.387318331528736 34.130267781806864 56.563164792288227 ;
+	setAttr ".r" -type "double3" -24.938352729614568 26.599999999997284 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "253EB750-4CB0-FC86-AC0E-AFA047B3A0F8";
 	setAttr -k off ".v" no;
@@ -1676,7 +1676,7 @@ createNode materialInfo -n "materialInfo2";
 	rename -uid "EABDABC9-4AC9-36FF-49ED-E4A445850873";
 createNode blinn -n "blinn1";
 	rename -uid "DC5AAE81-43C2-0DD6-84BD-A0AAFBEDD580";
-	setAttr ".c" -type "float3" 0.5 0.5 0.141 ;
+	setAttr ".c" -type "float3" 0.49830821 0.49782243 0.14109044 ;
 createNode shadingEngine -n "blinn1SG";
 	rename -uid "E7D06862-444E-CC41-2C78-EE82411DED6C";
 	setAttr ".ihi" 0;
@@ -1773,18 +1773,6 @@ createNode reference -n "Huntsman_Asset3RN";
 lockNode -l 1 ;
 createNode wood -n "wood1";
 	rename -uid "BFCBFBE5-4EF9-2C9E-7357-3998B7B9DA07";
-createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "C9161033-4265-51A4-9A77-51A91BC3421F";
-	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -44.047617297323995 -615.47616601936511 ;
-	setAttr ".tgi[0].vh" -type "double2" 603.57140458765582 44.047617297323995 ;
-	setAttr -s 2 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 338.57144165039062;
-	setAttr ".tgi[0].ni[0].y" -200;
-	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" 31.428571701049805;
-	setAttr ".tgi[0].ni[1].y" -272.85714721679688;
-	setAttr ".tgi[0].ni[1].nvs" 1923;
 createNode lambert -n "lambert2";
 	rename -uid "8B7F1F6A-4859-DA52-54B7-EB8202483118";
 createNode shadingEngine -n "lambert2SG";
@@ -2339,6 +2327,14 @@ createNode transformGeometry -n "transformGeometry2";
 createNode transformGeometry -n "transformGeometry3";
 	rename -uid "B89F6C4F-4BAE-C9C1-C811-B0B90DBB60D3";
 	setAttr ".txf" -type "matrix" 1 0 0 0 0 0.5 0 0 0 0 1 0 0 -0.084746705957875257 0 1;
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "172F674C-45FE-7098-C6C0-F8B64D6FCD68";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -44.047617297323995 -615.47616601936511 ;
+	setAttr ".tgi[0].vh" -type "double2" 603.57140458765582 44.047617297323995 ;
+	setAttr ".tgi[0].ni[0].x" 338.57144165039062;
+	setAttr ".tgi[0].ni[0].y" -200;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -2464,8 +2460,6 @@ connectAttr "Maya_Phong1SG.msg" "materialInfo6.sg";
 connectAttr "blinn4.oc" "blinn4SG.ss";
 connectAttr "blinn4SG.msg" "materialInfo7.sg";
 connectAttr "blinn4.msg" "materialInfo7.m";
-connectAttr "wood1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
-		;
 connectAttr "wood2.oc" "lambert2.c";
 connectAttr "lambert2.oc" "lambert2SG.ss";
 connectAttr "lambert2SG.msg" "materialInfo8.sg";
@@ -2485,6 +2479,8 @@ connectAttr "lambert3.msg" "materialInfo10.m";
 connectAttr "lambert4.oc" "lambert4SG.ss";
 connectAttr "lambert4SG.msg" "materialInfo11.sg";
 connectAttr "lambert4.msg" "materialInfo11.m";
+connectAttr "wood1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
 connectAttr "Maya_Lambert1SG.pa" ":renderPartition.st" -na;
 connectAttr "Maya_Lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
