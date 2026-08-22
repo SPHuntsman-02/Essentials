@@ -7,6 +7,7 @@
     "com.unity.ide.rider": "3.0.36",
     "com.unity.ide.visualstudio": "2.0.23",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "com.unity.inputsystem": "1.14.2",
     "com.unity.multiplayer.center": "1.0.0",
     "com.unity.render-pipelines.universal": "17.2.0",
@@ -15,6 +16,10 @@
 =======
     "com.unity.inputsystem": "1.14.0",
     "com.unity.multiplayer.center": "1.0.0",
+=======
+    "com.unity.inputsystem": "1.14.0",
+    "com.unity.multiplayer.center": "1.0.0",
+>>>>>>> fa5a33074b0cff4b2ce1d167d537fcc840f0d06d
     "com.unity.render-pipelines.universal": "17.1.0",
     "com.unity.test-framework": "1.5.1",
     "com.unity.timeline": "1.8.7",
