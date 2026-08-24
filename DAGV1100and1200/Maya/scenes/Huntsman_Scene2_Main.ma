@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Huntsman_Scene2_Main.ma
-//Last modified: Wed, Dec 10, 2025 12:43:47 AM
+//Last modified: Fri, Dec 05, 2025 04:44:27 PM
 //Codeset: 1252
 file -rdi 1 -ns "Huntsman_Asset1" -dr 1 -rfn "Huntsman_Asset1RN" -op "v=0;" 
 		-typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya/assets/Huntsman_Asset1.ma";
@@ -29,21 +29,20 @@ file -r -ns "Huntsman_Asset6" -dr 1 -rfn "Huntsman_Asset5RN" -op "v=0;" -typ "ma
 requires maya "2026";
 requires -nodeType "MaterialXSurfaceShader" -dataType "MxDocumentStackData" "LookdevXMaya" "1.9.0";
 requires "stereoCamera" "10.0";
-requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiSkyDomeLight"
-		 -nodeType "aiPhysicalSky" -nodeType "aiImagerDenoiserOidn" "mtoa" "5.5.3";
-requires "stereoCamera" "10.0";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
+		 "mtoa" "5.5.3";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "F0BB9A38-4403-A22C-C87D-C38C7994F2F9";
+fileInfo "UUID" "A1670EAE-42FE-FA21-0191-A882A7670D25";
 createNode transform -s -n "persp";
 	rename -uid "B3B046BF-4E20-513D-0F2D-B787DEC71139";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 29.801361827834498 28.721814659074976 58.363465801671836 ;
-	setAttr ".r" -type "double3" -20.138352729616027 26.99999999999984 0 ;
+	setAttr ".t" -type "double3" 28.387318331528736 34.130267781806864 56.563164792288227 ;
+	setAttr ".r" -type "double3" -24.938352729614568 26.599999999997284 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "253EB750-4CB0-FC86-AC0E-AFA047B3A0F8";
 	setAttr -k off ".v" no;
@@ -1173,26 +1172,21 @@ createNode mesh -n "FlagpoleShape" -p "Flagpole";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "aiSkyDomeLight1";
-	rename -uid "6337DE91-4BAE-D209-E179-8291E399E9C1";
-createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
-	rename -uid "6EED5EE6-4B43-2BAF-1480-BE9C2E6C2BB8";
-	setAttr -k off ".v";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "70ED5553-4A91-0D4E-15EA-A6A8FF06977D";
+	rename -uid "C12E063A-4B45-C384-EFE4-72902E4698C3";
 	setAttr -s 15 ".lnk";
 	setAttr -s 15 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "BCCDE990-4274-6033-1253-4F8A627DEB31";
+	rename -uid "893E7E8F-411E-631F-5C19-12B7D7519D15";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "DEBF86D9-4727-4730-BECD-EBA104213B9A";
+	rename -uid "1F22EBA4-4A89-FF80-C4FB-8C842C1A285F";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "C16F3998-463B-7F2C-05B2-32BFA35843F4";
+	rename -uid "61CE551C-4802-C5E6-88C9-7094704B195C";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "4CF8F162-4C24-088D-9F1D-96ABB987E1D1";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "6C44E1D6-4249-0594-1C16-ACA147849841";
+	rename -uid "848FE430-4E10-74A0-6721-D99288A262B3";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "8D1F3583-4BED-97BD-7945-77BC10C1908D";
 	setAttr ".g" yes;
@@ -1275,7 +1269,6 @@ createNode reference -n "Huntsman_Asset1RN";
 lockNode -l 1 ;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "39CE2205-4929-BE1F-EDF3-30B26432F308";
-	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
 	setAttr ".version" -type "string" "5.5.3";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "25D68A59-4E03-89E8-F7E4-82BE9C30AE08";
@@ -1308,7 +1301,7 @@ createNode reference -n "Huntsman_Asset1RN1";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Huntsman_Asset1RN1"
 		"Huntsman_Asset1RN1" 0
-		"Huntsman_Asset1RN1" 6
+		"Huntsman_Asset1RN1" 166
 		2 "|Huntsman_Asset2:CheckpointTower" "translate" " -type \"double3\" 0 0 0"
 		
 		2 "|Huntsman_Asset2:CheckpointTower" "rotatePivot" " -type \"double3\" -13 7.5 0"
@@ -1316,9 +1309,327 @@ createNode reference -n "Huntsman_Asset1RN1";
 		2 "|Huntsman_Asset2:CheckpointTower" "scalePivot" " -type \"double3\" -13 7.5 0"
 		
 		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
-		"pt[0:159]" (" -s 160 -type \"float3\" -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -"
-		+ "13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0 -13 0 0"
-		)
+		"pnts" " -s 160"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[0]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[1]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[2]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[3]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[4]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[5]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[6]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[7]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[8]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[9]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[10]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[11]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[12]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[13]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[14]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[15]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[16]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[17]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[18]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[19]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[20]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[21]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[22]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[23]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[24]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[25]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[26]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[27]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[28]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[29]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[30]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[31]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[32]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[33]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[34]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[35]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[36]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[37]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[38]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[39]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[40]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[41]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[42]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[43]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[44]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[45]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[46]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[47]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[48]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[49]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[50]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[51]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[52]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[53]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[54]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[55]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[56]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[57]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[58]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[59]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[60]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[61]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[62]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[63]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[64]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[65]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[66]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[67]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[68]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[69]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[70]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[71]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[72]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[73]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[74]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[75]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[76]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[77]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[78]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[79]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[80]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[81]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[82]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[83]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[84]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[85]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[86]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[87]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[88]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[89]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[90]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[91]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[92]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[93]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[94]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[95]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[96]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[97]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[98]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[99]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[100]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[101]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[102]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[103]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[104]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[105]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[106]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[107]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[108]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[109]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[110]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[111]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[112]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[113]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[114]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[115]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[116]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[117]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[118]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[119]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[120]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[121]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[122]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[123]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[124]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[125]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[126]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[127]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[128]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[129]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[130]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[131]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[132]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[133]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[134]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[135]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[136]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[137]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[138]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[139]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[140]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[141]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[142]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[143]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[144]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[145]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[146]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[147]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[148]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[149]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[150]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[151]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[152]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[153]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[154]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[155]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[156]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[157]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[158]" " -type \"float3\" -13 0 0"
+		2 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape" 
+		"pnts[159]" " -type \"float3\" -13 0 0"
 		3 "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape.instObjGroups" 
 		"Huntsman_Asset2:Maya_Lambert1SG.dagSetMembers" "-na"
 		5 3 "Huntsman_Asset1RN1" "|Huntsman_Asset2:CheckpointTower|Huntsman_Asset2:CheckpointTowerShape.instObjGroups" 
@@ -1440,10 +1751,6 @@ createNode reference -n "Huntsman_Asset3RN";
 		2 "Huntsman_Asset4:groupParts1" "inputRemoveComponent" " -type \"componentList\" 1 \"f[0:65]\""
 		
 		2 "Huntsman_Asset4:groupParts1" "groupId" " 127"
-		3 "Huntsman_Asset4:groupId1.groupId" "Huntsman_Asset4:groupParts1.groupId" 
-		""
-		3 "Huntsman_Asset4:groupId1.message" ":initialShadingGroup.groupNodes" "-na"
-		
 		3 "Huntsman_Asset4:groupId1.groupId" "|Huntsman_Asset4:Portcullis|Huntsman_Asset4:PortcullisShape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|Huntsman_Asset4:Portcullis|Huntsman_Asset4:PortcullisShape.instObjGroups.objectGroups[0].objectGrpColor" 
@@ -1452,6 +1759,10 @@ createNode reference -n "Huntsman_Asset3RN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "Huntsman_Asset4:polyAutoProj1.output" "|Huntsman_Asset4:Portcullis|Huntsman_Asset4:PortcullisShape.inMesh" 
 		""
+		3 "Huntsman_Asset4:groupId1.groupId" "Huntsman_Asset4:groupParts1.groupId" 
+		""
+		3 "Huntsman_Asset4:groupId1.message" ":initialShadingGroup.groupNodes" "-na"
+		
 		5 4 "Huntsman_Asset3RN" "|Huntsman_Asset4:Portcullis|Huntsman_Asset4:PortcullisShape.inMesh" 
 		"Huntsman_Asset3RN.placeHolderList[1]" ""
 		5 3 "Huntsman_Asset3RN" "|Huntsman_Asset4:Portcullis|Huntsman_Asset4:PortcullisShape.instObjGroups" 
@@ -1489,7 +1800,7 @@ createNode reference -n "Huntsman_Asset4RN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Huntsman_Asset4RN"
 		"Huntsman_Asset4RN" 0
-		"Huntsman_Asset4RN" 19
+		"Huntsman_Asset4RN" 222
 		2 "|Huntsman_Asset5:Flagpole" "translate" " -type \"double3\" 0 0 0"
 		2 "|Huntsman_Asset5:Flagpole" "rotatePivot" " -type \"double3\" -11.16330209374427795 17.75 -1.7881393432617188e-07"
 		
@@ -1505,12 +1816,415 @@ createNode reference -n "Huntsman_Asset4RN";
 		
 		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts" " -s 205"
 		
-		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pt[0:165]" (
-		" -type \"float3\" -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 "
-		+ "-13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0"
-		)
-		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pt[166:204]" 
-		" -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0 -13 12.75 0"
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[0]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[1]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[2]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[3]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[4]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[5]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[6]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[7]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[8]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[9]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[10]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[11]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[12]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[13]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[14]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[15]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[16]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[17]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[18]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[19]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[20]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[21]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[22]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[23]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[24]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[25]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[26]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[27]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[28]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[29]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[30]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[31]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[32]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[33]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[34]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[35]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[36]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[37]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[38]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[39]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[40]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[41]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[42]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[43]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[44]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[45]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[46]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[47]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[48]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[49]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[50]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[51]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[52]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[53]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[54]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[55]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[56]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[57]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[58]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[59]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[60]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[61]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[62]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[63]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[64]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[65]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[66]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[67]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[68]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[69]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[70]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[71]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[72]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[73]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[74]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[75]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[76]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[77]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[78]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[79]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[80]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[81]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[82]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[83]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[84]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[85]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[86]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[87]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[88]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[89]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[90]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[91]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[92]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[93]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[94]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[95]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[96]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[97]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[98]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[99]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[100]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[101]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[102]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[103]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[104]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[105]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[106]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[107]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[108]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[109]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[110]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[111]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[112]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[113]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[114]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[115]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[116]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[117]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[118]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[119]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[120]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[121]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[122]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[123]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[124]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[125]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[126]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[127]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[128]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[129]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[130]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[131]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[132]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[133]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[134]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[135]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[136]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[137]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[138]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[139]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[140]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[141]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[142]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[143]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[144]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[145]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[146]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[147]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[148]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[149]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[150]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[151]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[152]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[153]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[154]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[155]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[156]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[157]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[158]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[159]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[160]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[161]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[162]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[163]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[164]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[165]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[166]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[167]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[168]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[169]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[170]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[171]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[172]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[173]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[174]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[175]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[176]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[177]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[178]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[179]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[180]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[181]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[182]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[183]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[184]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[185]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[186]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[187]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[188]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[189]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[190]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[191]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[192]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[193]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[194]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[195]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[196]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[197]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[198]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[199]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[200]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[201]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[202]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[203]" " -type \"float3\" -13 12.75 0"
+		
+		2 "|Huntsman_Asset5:Flagpole|Huntsman_Asset5:FlagpoleShape" "pnts[204]" " -type \"float3\" -13 12.75 0"
 		
 		3 "Huntsman_Asset5:groupId9.message" ":initialShadingGroup.groupNodes" "-na"
 		
@@ -1621,8 +2335,6 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[0].x" 338.57144165039062;
 	setAttr ".tgi[0].ni[0].y" -200;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
-createNode aiPhysicalSky -n "aiPhysicalSky1";
-	rename -uid "43CF3E3B-4E09-9A69-26B6-298E370A0C09";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -1642,7 +2354,6 @@ select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
 	setAttr -s 6 ".r";
-select -ne :lightList1;
 select -ne :defaultTextureList1;
 	setAttr -s 2 ".tx";
 select -ne :standardSurface1;
@@ -1656,13 +2367,13 @@ select -ne :initialShadingGroup;
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
+select -ne :initialMaterialInfo;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
 	setAttr ".dss" -type "string" "openPBR_shader1";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
-select -ne :defaultLightSet;
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -1675,6 +2386,8 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "Huntsman_Asset1RN1.phl[1]" "blinn1SG.dsm" -na;
 connectAttr "transformGeometry1.og" "Huntsman_Asset2RN.phl[1]";
 connectAttr "Huntsman_Asset2RN.phl[2]" "blinn1SG.dsm" -na;
@@ -1788,11 +2501,9 @@ connectAttr "blinn5.msg" ":defaultShaderList1.s" -na;
 connectAttr "lambert3.msg" ":defaultShaderList1.s" -na;
 connectAttr "lambert4.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "aiSkyDomeLightShape1.ltd" ":lightList1.l" -na;
 connectAttr "wood1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "wood2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "FlagpoleShape.ciog.cog[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId4.msg" ":initialShadingGroup.gn" -na;
-connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "wood1.oc" ":internal_standInShader.ic";
 // End of Huntsman_Scene2_Main.ma
